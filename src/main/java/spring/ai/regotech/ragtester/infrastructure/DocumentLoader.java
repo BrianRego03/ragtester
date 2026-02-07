@@ -3,10 +3,12 @@ package spring.ai.regotech.ragtester.infrastructure;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class DocumentLoader implements CommandLineRunner {
 
     private final VectorStore vectorStore;
