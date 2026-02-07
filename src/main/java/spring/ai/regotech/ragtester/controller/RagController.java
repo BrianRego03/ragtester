@@ -1,5 +1,7 @@
 package spring.ai.regotech.ragtester.controller;
 
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import spring.ai.regotech.ragtester.service.RagService;
 
@@ -10,4 +12,11 @@ public class RagController {
     public RagController(RagService ragService) {
         this.ragService = ragService;
     }
+
+    @PostMapping("/ai/rag")
+    public String generate(@RequestBody MessageRequest request){
+        return ragService.retrieveAndGenerate(request.message());
+    }
+
+    public static record MessageRequest(String message){}
 }
