@@ -1,13 +1,11 @@
 spring:
   application:
     name: ragtester
-
   datasource:
     url: ${SPRING_DATASOURCE_URL}
     username: ${SPRING_DATASOURCE_USERNAME}
     password: ${SPRING_DATASOURCE_PASSWORD}
     driver-class-name: org.postgresql.Driver
-
   ai:
     ollama:
       base-url: ${OLLAMA_URL}
@@ -24,6 +22,6 @@ spring:
         dimensions: 768
         max-document-batch-size: 10000
         schema-validation: true
-        table-name: ${TABLE_NAME}
+        table-name: vector_store
 
 
