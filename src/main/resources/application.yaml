@@ -9,23 +9,19 @@ spring:
     driver-class-name: org.postgresql.Driver
 
   ai:
-    openai:
+    ollama:
       base-url: ${OLLAMA_URL}
-      api-key: ""
       embedding:
         options:
           model: ${EMBEDDING_MODEL}
-          dimensions: ${EMBEDDING_DIM}
       chat:
-        #base-url: ${OLLAMA_URL}
-        api-key: ""
         options:
           model: ${CHAT_MODEL}
     vectorstore:
       pgvector:
         index-type: HNSW
         distance-type: COSINE_DISTANCE
-        dimensions: ${EMBEDDING_DIM}
+        dimensions: 768
         max-document-batch-size: 10000
         schema-validation: true
         table-name: ${TABLE_NAME}
