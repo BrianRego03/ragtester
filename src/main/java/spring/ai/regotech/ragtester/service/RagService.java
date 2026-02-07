@@ -9,8 +9,8 @@ public class RagService {
     private final ChatClient chatClient;
     private final VectorStore vectorStore;
 
-    public RagService(ChatClient chatClient, VectorStore vectorStore) {
-        this.chatClient = chatClient;
+    public RagService(ChatClient.Builder chatClientBuilder, VectorStore vectorStore) {
+        this.chatClient = chatClientBuilder.build();
         this.vectorStore = vectorStore;
     }
 }
